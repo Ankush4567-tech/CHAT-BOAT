@@ -26,7 +26,7 @@ const pool = mysql.createPool({
   charset: 'utf8mb4'
 });
 
-// Fetch last 50 messages
+
 app.get('/api/messages', async (req, res) => {
   try {
     const [rows] = await pool.query(
@@ -38,7 +38,7 @@ app.get('/api/messages', async (req, res) => {
   }
 });
 
-// Socket.io
+
 io.on('connection', (socket) => {
   console.log('User connected', socket.id);
 
